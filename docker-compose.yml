@@ -1,0 +1,14 @@
+version: '1'
+services:
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: admin
+            MYSQL_DATABASE: prova2
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_HOST: host.docker.internal
+        ports:
+            - "3306:3036"
+        volumes: 
+            - ./db:/docker-entrypoint-initdb.d
